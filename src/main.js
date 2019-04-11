@@ -1,10 +1,15 @@
 import Vue from 'vue';
 import App from './App.vue';
-import router from './router';
 
 Vue.config.productionTip = false;
 
 new Vue({
-  router,
   render: h => h(App),
 }).$mount('#app');
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector('#search').addEventListener('keydown', event => {
+    if (event.keyCode == 13) {
+      document.querySelector('.search-button').click();
+    }
+  })
+});
